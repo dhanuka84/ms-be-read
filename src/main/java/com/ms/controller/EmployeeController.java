@@ -22,22 +22,24 @@ public class EmployeeController
     @Autowired  
     private EmployeeService empService;   
     
-    @PostMapping("save")
-    @ResponseStatus(HttpStatus.CREATED)
-    public EmpDTO save(@RequestBody EmpDTO empRecord){
-    	return empService.add(empRecord);
-    }
+	/*
+	 * @PostMapping("save")
+	 * 
+	 * @ResponseStatus(HttpStatus.CREATED) public EmpDTO save(@RequestBody EmpDTO
+	 * empRecord){ return empService.add(empRecord); }
+	 */
 
     @GetMapping("{id}")
     public EmpDTO getOrder(@PathVariable("id") long id){
         return empService.getById(id);
     }
 
-    @DeleteMapping("delete/{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") long id){
-    	empService.delete(id);
-    }
+	/*
+	 * @DeleteMapping("delete/{id}")
+	 * 
+	 * @ResponseStatus(HttpStatus.NO_CONTENT) public void delete(@PathVariable("id")
+	 * long id){ empService.delete(id); }
+	 */
     
     @GetMapping("all")
     public List<EmpDTO> all(){
